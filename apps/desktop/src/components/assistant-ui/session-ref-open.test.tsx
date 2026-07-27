@@ -9,7 +9,7 @@ import { MarkdownTextContent } from './markdown-text'
 const openSessionTile = vi.fn()
 
 vi.mock('@/store/session-states', async importOriginal => ({
-  ...(await importOriginal<typeof import('@/store/session-states')>()),
+  ...(await importOriginal<Record<string, unknown>>()),
   openSessionTile: (...args: unknown[]) => openSessionTile(...args)
 }))
 
